@@ -1,32 +1,25 @@
 #include "main.h"
 /**
- * times_table - prints the 9 times table, starting with 0
+ * print_triangle - prints a triangle, followed by a new line
+ * @size: size of the triangle
  */
-void times_table(void)
+void print_triangle(int size)
 {
-int i, j, k;
-for (i = 0; i < 10; i++)
+if (size <= 0)
 {
-for (j = 0; j < 10; j++)
+_putchar('\n');
+} else
 {
-k = j * i;
-if (j == 0)
+int i, j;
+for (i = 1; i <= size; i++)
 {
-_putchar(k + '0');
+for (j = i; j < size; j++)
+{
+_putchar(' ');
 }
-if (k < 10 && j != 0)
+for (j = 1; j <= i; j++)
 {
-_putchar(',');
-_putchar(' ');
-_putchar(' ');
-_putchar(k + '0');
-} else if (k >= 10)
-{
-_putchar(',');
-_putchar(' ');
-_putchar((k / 10) + '0');
-_putchar((k % 10) + '0');
-}
+_putchar('#');
 }
 _putchar('\n');
 }
